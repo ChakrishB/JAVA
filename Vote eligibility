@@ -1,0 +1,24 @@
+
+import java.util.*;
+class Age
+{
+   public static void main(String args[])
+{
+   double age;
+   Scanner s=new Scanner(System.in);
+   System.out.println("Enter the age:");
+   age=s.nextDouble();
+   double needed;
+   needed=18-age;
+   if (age>=18)
+{
+    System.out.println("eligible to vote");
+ }
+  else
+{
+    System.out.println("u will be allowed to vote after years"+needed);
+}
+}
+}   
+
+  
