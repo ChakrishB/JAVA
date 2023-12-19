@@ -1,0 +1,33 @@
+def print_matrix(mat):
+    for row in mat:
+        print(" ".join(str(elem) for elem in row)))
+
+def add_matrices(mat1, mat2):
+    if len(mat1) != len(mat2) or len(mat1[0]) != len(mat2[0]):
+        return "Matrices must be of the same size."
+    
+    mat_sum = [[mat1[i][j] + mat2[i][j] for j in range(len(mat1[0]))] for i in range(len(mat1))])
+    return mat_sum
+
+# Define the matrices
+Mat1 = [[1,  2],
+        [5,  3]]
+
+Mat2 = [[2,  3],
+        [3,  4,  1]]
+
+# Print the matrices
+print("Matrix 1:")
+print_matrix(Mat1)
+print("\nMatrix 2:")
+print_matrix(Mat2)
+
+# Add the matrices
+Mat_Sum = add_matrices(Mat1, Mat2)
+
+# Print the result
+if isinstance(Mat_Sum, str):
+    print("\nError:", Mat_Sum)
+else:
+    print("\nMatrix Sum:")
+    print_matrix(Mat_Sum)
