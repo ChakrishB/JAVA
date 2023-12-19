@@ -1,0 +1,31 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class SpecialCharCount {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a line of text:");
+        String line = scanner.nextLine();
+
+        Pattern pattern = Pattern.compile("[^a-zA-Z0-9 ]");
+        Matcher matcher = pattern.matcher(line);
+
+        System.out.println("Special Characters:");
+        while (matcher.find()) {
+            System.out.print(matcher.group() + " ");
+        }
+
+        int count = 0;
+        char[] chars = line.toCharArray();
+        for (char c : chars) {
+            if (!Character.isLetterOrDigit(c) && !Character.isWhitespace(c)) {
+                count++;
+            }
+        }
+
+        System.out.println("\nNumber of Special Characters: " + count);
+    }
+}
